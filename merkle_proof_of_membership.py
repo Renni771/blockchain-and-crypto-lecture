@@ -32,6 +32,7 @@ def check_proof(top_hash, data_hash, proofs: list) -> bool:
     >>> check_proof(top_hash, data_hash, proof) == False
     True
     """
+    assert proofs, 'Proof list cannot be empty'
     next_hash = data_hash
 
     def hash(data): return hashlib.sha256(
@@ -44,4 +45,5 @@ def check_proof(top_hash, data_hash, proofs: list) -> bool:
         else:
             combined_hash = next_hash + proof[0]
             next_hash = hash(combined_hash)
+
     return top_hash == next_hash
