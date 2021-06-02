@@ -21,7 +21,7 @@ class Node:
 class MerkleTree:
     def __init__(self, data: list):
         assert len(data) != 0
-        nodes = list(map(Leaf, data))
+        nodes: list = list(map(Leaf, data))
 
         while len(nodes) != 1:
             newNodes = []
