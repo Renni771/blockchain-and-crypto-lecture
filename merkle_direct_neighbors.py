@@ -24,3 +24,5 @@ def direct_neighbors(p1: list, p2: list) -> bool:
 
     if p1[-1][1] == 'Right' and p2[-1][1] == 'Left':
         return rightmost(p1[:-1]) and leftmost(p2[:-1])
+
+    return False
